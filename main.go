@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/robfig/cron"
+	cron "github.com/robfig/cron/v3"
 )
 
 var config struct {
@@ -22,14 +22,15 @@ func init() {
 	log.SetPrefix(fmt.Sprintf("[%s] ", app))
 	flag.Parse()
 
-	config.evaluationInterval = 250 * time.Millisecond
+	config.evaluationInterval = 1 * time.Second
 	config.cronExpressions = flag.Args()
 
 	if len(config.cronExpressions) == 0 {
 		log.Fatal("at least one expression is required")
 	}
+	parser := cron.NewParser(cron.Minute | cron.Hour | cron.Dom | cron.Month | cron.Dow | cron.Descriptor)
 	for _, e := range config.cronExpressions {
-		schedule, err := cron.Parse(e)
+		schedule, err := parser.Parse(e)
 		if err != nil {
 			log.Fatalf("parse cron expression %q: %v", e, err)
 		}
