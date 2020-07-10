@@ -17,6 +17,11 @@ $ ${APP} -print-next-match-and-exit "*/3 * * * *"
 2020-07-10T12:48:00+02:00
 ```
 
+```sh
+$ wait-for-cron-expression-match -print-delta-and-exit "@hourly"
+3308.674034
+```
+
 ## Contents
 
 - [Get it](#get-it)
