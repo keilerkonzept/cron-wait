@@ -42,6 +42,8 @@ Usage of wait-for-cron-expression-match:
     	Print dots to stdout while waiting
   -format string
     	Timestamp format (default "2006-01-02T15:04:05Z07:00")
+  -print-delta-and-exit
+    	Only print the duration (in seconds) until the next expression match and exit (without waiting)
   -print-next-match-and-exit
     	Only print the timestamp of the next expression match and exit (without waiting)
   -q	(alias for -quiet)
