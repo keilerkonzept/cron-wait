@@ -6,9 +6,9 @@ A tiny tool that waits until a given cron expression would trigger, and then jus
 
 
 ```sh
-$ ${APP} "*/5 * * * * *"
-2020/07/08 17:57:17 waiting 2.998536s until next match (2020-07-08T17:57:20+02:00) of cron expression "*/5 * * * * *"
-$ # 2.998s later
+$ ${APP} "*/5 * * * *"
+[wait-for-cron-expression-match] 2020/07/10 11:19:46.883743 waiting 13.116478s until next match (2020-07-10T11:20:00+02:00) of cron expression ["*/5 * * * *"]
+$ # 13s later
 ```
 
 ## Contents
