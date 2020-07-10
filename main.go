@@ -11,8 +11,10 @@ import (
 )
 
 var config struct {
-	Quiet     bool
-	PrintDots bool
+	Quiet                     bool
+	PrintDots                 bool
+	PrintNextTimestampAndExit bool
+	TimestampFormat           string
 
 	cronExpressions    []string
 	schedules          []cron.Schedule
@@ -24,6 +26,9 @@ var app = "wait-for-cron-expression-match"
 func init() {
 	log.SetFlags(log.Ltime | log.Ldate | log.Lmicroseconds)
 	log.SetPrefix(fmt.Sprintf("[%s] ", app))
+	config.TimestampFormat = time.RFC3339
+	flag.BoolVar(&config.PrintNextTimestampAndExit, "print-next-match-and-exit", config.PrintNextTimestampAndExit, "Only print the timestamp of the next expression match and exit (without waiting)")
+	flag.StringVar(&config.TimestampFormat, "format", config.TimestampFormat, "Timestamp format")
 	flag.BoolVar(&config.Quiet, "quiet", config.Quiet, "Suppress all output")
 	flag.BoolVar(&config.Quiet, "q", config.Quiet, "(alias for -quiet)")
 	flag.BoolVar(&config.PrintDots, "dots", config.PrintDots, "Print dots to stdout while waiting")
@@ -59,6 +64,10 @@ func main() {
 		if i == 0 || nextNew.Before(next) {
 			next = nextNew
 		}
+	}
+	if config.PrintNextTimestampAndExit {
+		fmt.Println(next.Format(config.TimestampFormat))
+		return
 	}
 	delta := next.Sub(now)
 	if delta < tickInterval {

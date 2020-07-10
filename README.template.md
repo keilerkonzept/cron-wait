@@ -4,13 +4,17 @@ A tiny tool that waits until a given cron expression would trigger, and then jus
 
 ![image](doc/screenshot.png)
 
-## Example
-
+## Examples
 
 ```sh
 $ ${APP} "*/5 * * * *"
 [${APP}] 2020/07/10 11:59:29.965045 waiting 30.035156s until next match (2020-07-10T12:00:00+02:00) of cron expression ["*/5 * * * *"]
 [${APP}] 2020/07/10 12:00:00.966919 done
+```
+
+```sh
+$ ${APP} -print-next-match-and-exit "*/3 * * * *"
+2020-07-10T12:48:00+02:00
 ```
 
 ## Contents
