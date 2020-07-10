@@ -18,7 +18,7 @@ $ ${APP} -print-next-match-and-exit "*/3 * * * *"
 ```
 
 ```sh
-$ wait-for-cron-expression-match -print-delta-and-exit "@hourly"
+$ ${APP} -print-delta-and-exit "@hourly"
 3308.674034
 ```
 
