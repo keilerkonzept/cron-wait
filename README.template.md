@@ -2,13 +2,15 @@
 
 A tiny tool that waits until a given cron expression would trigger, and then just exits. If multiple expressions are given, it waits until the _first_ (earliest) match.
 
+![image](doc/screenshot.png)
+
 ## Example
 
 
 ```sh
 $ ${APP} "*/5 * * * *"
-[wait-for-cron-expression-match] 2020/07/10 11:19:46.883743 waiting 13.116478s until next match (2020-07-10T11:20:00+02:00) of cron expression ["*/5 * * * *"]
-$ # 13s later
+[${APP}] 2020/07/10 11:59:29.965045 waiting 30.035156s until next match (2020-07-10T12:00:00+02:00) of cron expression ["*/5 * * * *"]
+[${APP}] 2020/07/10 12:00:00.966919 done
 ```
 
 ## Contents
