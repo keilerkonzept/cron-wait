@@ -29,5 +29,7 @@ Or [download the binary for your platform](https://github.com/keilerkonzept/${AP
 ## Usage
 
 ```text
-${APP} [CRON_EXPRESSION [CRON_EXPRESSIONS...]]
+${APP} [OPTIONS] [CRON_EXPRESSION [CRON_EXPRESSIONS...]]
+
+${USAGE}
 ```

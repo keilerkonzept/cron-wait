@@ -29,5 +29,12 @@ Or [download the binary for your platform](https://github.com/keilerkonzept/wait
 ## Usage
 
 ```text
-wait-for-cron-expression-match [CRON_EXPRESSION [CRON_EXPRESSIONS...]]
+wait-for-cron-expression-match [OPTIONS] [CRON_EXPRESSION [CRON_EXPRESSIONS...]]
+
+Usage of wait-for-cron-expression-match:
+  -dots
+    	Print dots to stdout while waiting
+  -q	(alias for -quiet)
+  -quiet
+    	Suppress all output
 ```
