@@ -39,7 +39,7 @@ jobs:
         run: |
           npm version patch
           git add package.json
-          git commit -am "Bump version"
+          git commit -am "Bump version" || true
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
