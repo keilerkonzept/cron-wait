@@ -22,7 +22,7 @@ var config struct {
 	evaluationInterval time.Duration
 }
 
-var app = "wait-for-cron-expression-match"
+var app = "cron-wait"
 
 func init() {
 	log.SetFlags(log.Ltime | log.Ldate | log.Lmicroseconds)

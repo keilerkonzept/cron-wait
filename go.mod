@@ -1,4 +1,4 @@
-module github.com/keilerkonzept/wait-for-cron-expression-match
+module github.com/keilerkonzept/cron-wait
 
 go 1.14
 

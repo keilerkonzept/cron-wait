@@ -1,4 +1,4 @@
 {
-    "name": "wait-for-cron-expression-match",
+    "name": "cron-wait",
     "version": "0.1.9"
 }
